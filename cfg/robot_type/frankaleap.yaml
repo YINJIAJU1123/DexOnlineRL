@@ -1,0 +1,41 @@
+robot_config:
+  robot_type: frankaleap
+  hz: 10
+  joint_dim: 7
+  gripper_dim: 1
+  image_crop: {
+      "cam_head": [[0, 128], [224, 560]]
+  }
+  action_scale: [0.02, 0.06, 1.0]
+  image_keys: ["cam_chest", "cam_head"]
+
+  proprio_keys: ["tcp_pose", "gripper_pose"]
+
+  image_resize:
+    "cam_chest": [128, 128, 3]
+    "cam_head": [128, 128, 3]
+
+  bgr2rgb: true
+
+  target_pose: ${target_pose}
+  abs_pose_limit_low: ${abs_pose_limit_low}
+  abs_pose_limit_high: ${abs_pose_limit_high}
+  reset_joint: ${reset_joint}
+
+
+  random_reset: true
+  random_xy_range: 0.02
+  random_rz_range: 0.05
+  gripper_sleep: 0.05
+  max_episode_length: ${max_episode_length}
+  control_mode: ${control_mode}
+  classifier_cfg: ${classifier_cfg}
+  gripper_penalty: ${gripper_penalty}
+  close_gripper: ${close_gripper}
+  fix_gripper: ${fix_gripper}
+  ego_mode: ${ego_mode}
+
+
+
+
+
